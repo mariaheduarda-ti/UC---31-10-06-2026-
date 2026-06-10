@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Flask com Cookies</title>
+</head>
+
+{% if tema == 'escuro' %}
+<body style="background-color:black; color:white; text-align:center;">
+{% else %}
+<body style="background-color:white; color:black; text-align:center;">
+{% endif %}
+
+    <h1>Projeto Flask com Cookies</h1>
+
+    {% if nome %}
+        <h2>Olá, {{ nome }}!</h2>
+    {% else %}
+        <h2>Bem-vindo visitante!</h2>
+    {% endif %}
+
+    <form action="/salvar" method="POST">
+
+        <label>Digite seu nome:</label><br><br>
+
+        <input type="text" name="nome">
+
+        <button type="submit">Salvar</button>
+
+    </form>
+
+    <br><br>
+
+    <a href="/tema/claro">Tema Claro</a>
+
+    <a href="/tema/escuro">Tema Escuro</a>
+
+</body>
+</html>
